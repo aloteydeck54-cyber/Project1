@@ -1,0 +1,388 @@
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  line-height:1.5;
+  transition:background .3s,color .3s
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;padding:2rem
+}
+
+/* Theme */
+body.light{
+  background:#f7f7f8;
+  color:#111
+}
+
+body.dark{
+  background:#1e1e1e;
+  color:#f1f1f1
+}
+
+/* Head */
+.site-header{
+  position:sticky;
+  top:0;z-index:10;
+  background:rgba(255,255,255,0.20);
+  backdrop-filter: blur(6px)
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0.75rem 0.1rem
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0.75rem
+}
+
+.logo{
+  height:48px;
+  width:auto;
+  border-radius:8px
+}
+
+.brand-name{
+  font-weight:700;
+  letter-spacing:0.3px
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:1rem
+}
+
+.nav a{
+  color:inherit;
+  text-decoration:none;
+  padding:0.35rem 0.5rem;
+  border-radius:8px;
+  transition:transform .15s,box-shadow .15s
+}
+
+.nav a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.12)
+}
+
+#theme-toggle{
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  font-size:1.1rem
+}
+
+/* Hero */
+.hero{
+  padding:5rem 0;
+  background-size:cover;
+  background-position:center;
+  color:white
+}
+
+.hero-inner{
+  max-width:750px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+  padding:2rem;
+  border-radius:12px
+}
+
+.hero h1{
+  margin:0 0 0.5rem;
+  font-size:2.2rem
+}
+
+.hero p{
+  margin:0 0 1rem
+}
+
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:0.75rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600
+}
+
+.btn.primary{
+  background:#007BFF;
+  color:white;
+  box-shadow:0 6px 18px rgba(0,123,255,0.15);
+  transition:transform .15s,box-shadow .15s
+}
+
+.btn.primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(0,123,255,0.2)
+}
+
+
+/* Sections */
+section{
+  padding:3rem 0
+}
+
+.about p{
+  max-width:760px
+}
+
+
+/* Services */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:1rem
+}
+
+.card{
+  background:#948e8e;
+  padding:1.25rem;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  transition:transform .18s,box-shadow .18s
+}
+
+.card h3{
+  margin-top:0
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.18)
+}
+
+
+/* Gallery */
+.gallery-panel{
+  display:flex;gap:1rem;align-items:flex-start
+}
+
+
+.main-image img{
+  width: 700px;
+  max-width: 700px;
+  height: 400px;
+  border-radius:12px;
+  display:block;
+  max-height:420px;
+  object-fit:cover
+}
+
+
+.thumbnails{
+  display:flex;
+  flex-direction:column;
+  gap:0.6rem;
+  margin-left:1rem
+}
+
+.thumb{
+  width:120px;
+  height:80px;object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+  opacity:0.9;
+  transition:transform .12s,opacity .12s
+}
+
+.thumb:hover{
+  transform:translateY(-4px);
+  opacity:1
+}
+
+.thumb.selected{
+  outline:3px solid #007BFF;
+  opacity:1
+}
+
+
+/* Contact */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:2rem
+}
+
+form label{
+  display:block;
+  margin-bottom:0.75rem
+}
+
+input,textarea{
+  width:100%;
+  padding:0.6rem;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:white
+}
+
+body.dark input, body.dark textarea{
+  background:#2b2b2b;
+  color:#f1f1f1;
+  border:1px solid #3a3a3a
+}
+
+.error{
+  color:#ff6b6b;
+  font-size:0.85rem;
+  min-height:18px;
+  display:block
+}
+
+
+/* Footer */
+.site-footer{
+  padding:1.25rem 0;
+  text-align:center;
+  border-top:1px solid rgba(0,0,0,0.05)
+}
+
+
+/* Responsive */
+@media (max-width:1000px){
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-panel{flex-direction:column}
+  .thumbnails{flex-direction:row;margin-left:0;overflow:auto}
+  .thumb{width:90px;height:60px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .header-inner{padding:0.6rem}
+  .hero{padding:3rem 0}
+  .hero h1{font-size:1.4rem}
+  .service-grid{grid-template-columns:1fr}
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.6);
+  z-index:2000;
+  padding:1rem
+}
+
+.modal.show{
+  display:flex
+}
+
+.modal-dialog{
+  background:#f7f7f8;
+  max-width:720px;
+  width:100%;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative
+}
+
+body.dark .modal-dialog{
+  background:#2a2a2a;
+  color:#f1f1f1
+}
+
+.modal-close{
+  position:absolute;
+  right:12px;
+  top:8px;
+  background:transparent;
+  border:none;
+  font-size:1.5rem;
+  cursor:pointer
+}
+
+.modal-content{
+  padding:1.25rem;
+  display:flex;
+  gap:1rem;
+  align-items:flex-start
+}
+
+.modal-content img{
+  width:45%;
+  border-radius:8px;
+  object-fit:cover
+}
+
+.modal-content #modal-body{
+  width:55%
+}
+
+.modal-content ul{
+  padding-left:1rem
+}
+
+
+/* Thumbnail Wrapper */
+.thumb-wrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Overlay — invisible until hover */
+.thumb-wrap .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  z-index: 2;
+  pointer-events: none; 
+}
+
+/* Show overlay on hover */
+.thumb-wrap:hover .overlay {
+  opacity: 1;
+}
+
+/* Read More button */
+.read-more {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.20);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: auto; 
+}
+
+/* Fade in button on hover */
+.thumb-wrap:hover .read-more {
+  opacity: 1;
+}
+
+/* Hover effect for button */
+.read-more:hover {
+  color: rgb(121, 116, 116);
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
+}
+
+/*So sa
+ego reach
+400😁*/

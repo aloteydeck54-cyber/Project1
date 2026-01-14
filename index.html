@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CINDY Motors</title>
+  <link rel="icon" type="image/png" href="images/logo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="CINDY Motors Logo" class="logo" />
+        <span class="brand-name">CINDY Motors</span>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="background-image:url('images/banner.jpg')">
+      <div class="hero-inner container">
+        <h1>Drive Your Dreams with CINDY Motors</h1>
+        <p>Quality cars · Trusted financing · Expert maintenance</p>
+        <a class="btn primary" href="#services">Explore Services</a>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>About Us</h2>
+      <p>CINDY Motors is a leading automotive company specializing in car sales, leasing, maintenance, spare parts and financing assistance. Our mission is to provide reliable vehicles and exceptional service to every customer.</p>
+    </section>
+
+    <section id="services" class="container services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <article class="card">
+          <h3>Car Sales</h3>
+          <p>Wide selection of new and pre-owned vehicles with transparent pricing and vehicle history.</p>
+        </article>
+        <article class="card">
+          <h3>Vehicle Leasing</h3>
+          <p>Flexible leasing plans for individuals and corporate clients.</p>
+        </article>
+        <article class="card">
+          <h3>Maintenance & Spare Parts</h3>
+          <p>Genuine spare parts and expert servicing to keep your car in top condition.</p>
+        </article>
+        <article class="card">
+          <h3>Financing Support</h3>
+          <p>We help arrange financing options to make your purchase easier.</p>
+        </article>
+      </div>
+    </section>
+
+   <section id="gallery" class="container gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-panel">
+        <div class="main-image">
+          <img id="current-image" src="images/car1.jpg" alt="Current car" />
+        </div>
+        <div class="thumbnails">
+          <div class="thumb-wrap">
+            <img class="thumb selected" src="images/car1.jpg" data-large="images/car1.jpg" alt="Car 1" />
+            <div class="overlay">
+              <button class="read-more" data-car="car1">Read More</button>
+            </div>
+          </div>
+          <div class="thumb-wrap">
+            <img class="thumb" src="images/car2.jpg" data-large="images/car2.jpg" alt="Car 2" />
+            <div class="overlay">
+              <button class="read-more" data-car="car2">Read More</button>
+            </div>
+          </div>
+          <div class="thumb-wrap">
+            <img class="thumb" src="images/car3.webp" data-large="images/car3.webp" alt="Car 3" />
+            <div class="overlay">
+              <button class="read-more" data-car="car3">Read More</button>
+            </div>
+          </div>
+          <div class="thumb-wrap">
+            <img class="thumb" src="images/car4.webp" data-large="images/car4.webp" alt="Car 4" />
+            <div class="overlay">
+              <button class="read-more" data-car="car4">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="container contact">
+      <h2>Contact Us</h2>
+      <div class="contact-grid">
+        <form id="contact-form" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" id="name" required />
+            <small class="error" id="name-error"></small>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" id="email" required />
+            <small class="error" id="email-error"></small>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" id="message" rows="5" required></textarea>
+            <small class="error" id="message-error"></small>
+          </label>
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+          <h3>Visit Us</h3>
+          <p>123 Motorway Ave, Accra, Ghana</p>
+          <p>Phone: +233 24 000 0000</p>
+          <p>Email: info@cindymotors.example</p>
+          <div class="social">
+            <a href="#" aria-label="facebook">Facebook</a>
+            <a href="#" aria-label="twitter">Twitter</a>
+            <a href="#" aria-label="instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 CINDY Motors. All rights reserved.</p>
+    </div>
+  </footer>
+
+   <!-- Modal -->
+  <div id="car-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <div class="modal-content">
+        <h3 id="modal-title">Car Details</h3>
+        <img id="modal-image" src="images/car1.jpg" alt="Car detail" />
+        <div id="modal-body">
+          <p id="modal-desc">Placeholder description</p>
+          <ul id="modal-specs"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
